@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4EA9D8E88637D06392074DB1 /* Pods_NewsReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234D07A1BA899A92900B82C4 /* Pods_NewsReaderTests.framework */; };
+		6339899B214BADAE00612C72 /* ViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6339899A214BADAE00612C72 /* ViewControllerManager.swift */; };
 		63A68D512140066A00DC29CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A68D502140066A00DC29CC /* AppDelegate.swift */; };
 		63A68D532140066A00DC29CC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A68D522140066A00DC29CC /* RootViewController.swift */; };
 		63A68D552140066A00DC29CC /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A68D542140066A00DC29CC /* DataViewController.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		234D07A1BA899A92900B82C4 /* Pods_NewsReaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsReaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2476718EBA52DB7A77BF1F60 /* Pods_NewsReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6339899A214BADAE00612C72 /* ViewControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerManager.swift; sourceTree = "<group>"; };
 		63A68D4D2140066A00DC29CC /* NewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A68D502140066A00DC29CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63A68D522140066A00DC29CC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		63398999214BAD9E00612C72 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6339899A214BADAE00612C72 /* ViewControllerManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		63A68D442140066A00DC29CC = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +148,7 @@
 		63AE192D2144DCDF00EF6BB9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				63398999214BAD9E00612C72 /* Manager */,
 				63AE192E2144DCF700EF6BB9 /* BaseViewController.swift */,
 			);
 			path = Common;
@@ -336,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6339899B214BADAE00612C72 /* ViewControllerManager.swift in Sources */,
 				63AE192F2144DCF700EF6BB9 /* BaseViewController.swift in Sources */,
 				63A68D532140066A00DC29CC /* RootViewController.swift in Sources */,
 				63A68D572140066A00DC29CC /* ModelController.swift in Sources */,
