@@ -21,6 +21,7 @@
 		63AE19332144DD4100EF6BB9 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE19322144DD4100EF6BB9 /* MainPageViewController.swift */; };
 		63AE19352144DD7A00EF6BB9 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE19342144DD7A00EF6BB9 /* PageContentViewController.swift */; };
 		63AE19372144DDC300EF6BB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AE19362144DDC300EF6BB9 /* Main.storyboard */; };
+		63DF4B56214F7A63005642EE /* VerticalPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DF4B55214F7A63005642EE /* VerticalPagingView.swift */; };
 		64362ADC6F33B4DD7AE57E08 /* Pods_NewsReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2476718EBA52DB7A77BF1F60 /* Pods_NewsReader.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		63AE19322144DD4100EF6BB9 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		63AE19342144DD7A00EF6BB9 /* PageContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 		63AE19362144DDC300EF6BB9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		63DF4B55214F7A63005642EE /* VerticalPagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalPagingView.swift; sourceTree = "<group>"; };
 		7F9F5DEEB356FD79EF4EEDEB /* Pods-NewsReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsReader/Pods-NewsReader.release.xcconfig"; sourceTree = "<group>"; };
 		8F7104AE9B955E39F3A710CA /* Pods-NewsReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsReaderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsReaderTests/Pods-NewsReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F6A07AD1C178F2C1A75E50F /* Pods-NewsReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsReader/Pods-NewsReader.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		63AE192D2144DCDF00EF6BB9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				63DF4B54214F7A3B005642EE /* View */,
 				63398999214BAD9E00612C72 /* Manager */,
 				63AE192E2144DCF700EF6BB9 /* BaseViewController.swift */,
 			);
@@ -170,6 +173,14 @@
 				63AE19362144DDC300EF6BB9 /* Main.storyboard */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		63DF4B54214F7A3B005642EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63DF4B55214F7A63005642EE /* VerticalPagingView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		922A45556DCC2C2E1B6EE17B /* Frameworks */ = {
@@ -349,6 +360,7 @@
 			files = (
 				6339899B214BADAE00612C72 /* ViewControllerManager.swift in Sources */,
 				63AE192F2144DCF700EF6BB9 /* BaseViewController.swift in Sources */,
+				63DF4B56214F7A63005642EE /* VerticalPagingView.swift in Sources */,
 				63A68D532140066A00DC29CC /* RootViewController.swift in Sources */,
 				63A68D572140066A00DC29CC /* ModelController.swift in Sources */,
 				63AE19352144DD7A00EF6BB9 /* PageContentViewController.swift in Sources */,

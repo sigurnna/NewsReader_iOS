@@ -9,6 +9,6 @@
 import UIKit
 
 /// Pull to refresh 등의 기능을 갖고 있는 Base View Controller.
-class BaseViewController: UITableViewController {
+class BaseViewController: UIViewController {
     
 }

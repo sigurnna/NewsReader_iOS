@@ -17,10 +17,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gqm-g4-KyP">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.97254901960784312" green="0.73725490196078436" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.97254901960784312" green="0.73725490196078436" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Kmq-4H-mWD" kind="show" id="DnB-iu-hl6"/>
+                        <segue destination="Icp-nf-iZU" kind="relationship" relationship="rootViewController" id="cuc-qm-ft6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2y-3X-Mae" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -28,60 +28,43 @@
             <point key="canvasLocation" x="-362" y="152"/>
         </scene>
         <!--Main Page View Controller-->
-        <scene sceneID="Yuq-Ht-Qep">
+        <scene sceneID="ocU-at-8Ug">
             <objects>
-                <viewController id="Kmq-4H-mWD" customClass="MainPageViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Pid-Ro-rY6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="EoA-Y5-kpF"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g6Y-9D-uKY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Icp-nf-iZU" customClass="MainPageViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="pym-Bn-Z9K"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tqq-kG-Ltq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="463" y="152"/>
+            <point key="canvasLocation" x="399" y="152"/>
         </scene>
         <!--Page Content View Controller-->
-        <scene sceneID="zjG-6N-Eqj">
+        <scene sceneID="zgc-Pw-s78">
             <objects>
-                <tableViewController id="Olp-gk-vju" customClass="PageContentViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZQ7-1L-lMH">
+                <viewController storyboardIdentifier="PageContentViewController" id="nsx-gZ-2M6" customClass="PageContentViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MvI-AY-jYA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeN-qC-baB" customClass="VerticalPagingView" customModule="NewsReader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="testCellIdentifier" id="fMT-kE-5Ex">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fMT-kE-5Ex" id="wqG-eG-Jfm">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="테스트 레이블." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgk-ZD-MiP">
-                                            <rect key="frame" x="138.5" y="11" width="97.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Wgk-ZD-MiP" firstAttribute="centerX" secondItem="wqG-eG-Jfm" secondAttribute="centerX" id="3ZD-AP-mzi"/>
-                                        <constraint firstItem="Wgk-ZD-MiP" firstAttribute="centerY" secondItem="wqG-eG-Jfm" secondAttribute="centerY" id="tdO-Pn-8wd"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="Olp-gk-vju" id="vMP-DD-mkM"/>
-                            <outlet property="delegate" destination="Olp-gk-vju" id="pmG-Ci-y4w"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k7z-mz-vfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="TBK-jo-6x7" firstAttribute="bottom" secondItem="OeN-qC-baB" secondAttribute="bottom" id="POP-4k-KFS"/>
+                            <constraint firstItem="TBK-jo-6x7" firstAttribute="trailing" secondItem="OeN-qC-baB" secondAttribute="trailing" id="RAm-O3-TQB"/>
+                            <constraint firstItem="OeN-qC-baB" firstAttribute="top" secondItem="TBK-jo-6x7" secondAttribute="top" id="UcC-1V-zlk"/>
+                            <constraint firstItem="OeN-qC-baB" firstAttribute="leading" secondItem="TBK-jo-6x7" secondAttribute="leading" id="stv-mJ-g5Y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TBK-jo-6x7"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="OeN-qC-baB" id="DYb-eP-Az4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Opu-Yq-pbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1239" y="152"/>
+            <point key="canvasLocation" x="1191" y="152"/>
         </scene>
     </scenes>
 </document>
