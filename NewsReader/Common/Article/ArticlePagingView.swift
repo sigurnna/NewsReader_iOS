@@ -10,7 +10,8 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class VerticalPagingView: UIScrollView {
+/// 기사 미리보기 paging view.
+class ArticlePagingView: UIScrollView {
     
     let disposeBag = DisposeBag()
     
@@ -23,6 +24,7 @@ class VerticalPagingView: UIScrollView {
         super.awakeFromNib()
         
         self.isPagingEnabled = true
+        self.bounces = true
         
         self.rx.contentOffset
             .subscribe(onNext: { [weak self] offset in
@@ -51,7 +53,7 @@ class VerticalPagingView: UIScrollView {
     }
     
     override func addSubview(_ view: UIView) {
-        guard view.frame.height > 300 else { return } // TODO: Temp Code.
+        guard view.isKind(of: ArticlePreviewTableView.self) else { return }
         
         view.frame.origin.x = 0
         view.frame.origin.y = 0
@@ -62,6 +64,6 @@ class VerticalPagingView: UIScrollView {
 }
 
 // MARI: - Internal
-fileprivate extension VerticalPagingView {
+fileprivate extension ArticlePagingView {
 
 }

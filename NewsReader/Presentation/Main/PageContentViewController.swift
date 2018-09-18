@@ -12,7 +12,7 @@ import UIKit
 /// 각 페이지의 Contents를 담당함.
 class PageContentViewController: BaseViewController {
     
-    @IBOutlet weak var scrollView: VerticalPagingView!
+    @IBOutlet weak var scrollView: ArticlePagingView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
