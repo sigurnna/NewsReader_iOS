@@ -39,17 +39,34 @@ class ArticlePreviewTableView: UITableView {
             
             self.register(cellType.nib, forCellReuseIdentifier: cellType.identifier)
             
-            items
+            // Bind cells
+            self.items
                 .bind(to: self.rx.items(cellIdentifier: cellType.identifier)) { [weak self] (row, element, cell) in
-                    guard let weakSelf = self else { return }
-                    
-                    if weakSelf.type == .single {
-                        
-                    } else {
-                        
+                    if let weakSelf = self {
+                        if weakSelf.type == .single {
+                            let singleCell = cell as! ArticlePreviewSingleCell
+                        } else {
+                            let multipleCell = cell as! ArticlePreviewMultipleCell
+                        }
                     }
                 }
                 .disposed(by: disposeBag)
+            
+            // Set Delegate
+            self.rx
+                .setDelegate(self)
+                .disposed(by: disposeBag)
+        }
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension ArticlePreviewTableView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if type! == .single {
+            return tableView.frame.height
+        } else {
+            return tableView.frame.height / 5
         }
     }
 }
