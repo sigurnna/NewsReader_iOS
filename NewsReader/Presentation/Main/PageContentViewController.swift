@@ -17,19 +17,21 @@ class PageContentViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for i in 0..<5 {
-            let label = UILabel()
-            label.frame = self.view.bounds
-            label.text = String(format: "%@ %D", "Test Label ", i)
-            label.textAlignment = .center
+        var articles = [ArticleModel]()
+        
+        // Make Temp Models
+        for _ in 0 ..< 5 {
+            let article = ArticleModel(link: "temp", title: "temp", contents: "temp", thumbnailURL: "temp")
+            articles.append(article)
+        }
+        
+        // Make Temp Article pages.
+        for _ in 0..<5 {
+            let articleTableView = ArticlePreviewTableView(frame: scrollView.bounds)
+            articleTableView.items.accept(articles)
+            articleTableView.type = .multiple
             
-            if i % 2 == 0 {
-                label.backgroundColor = UIColor.gray
-            } else {
-                label.backgroundColor = UIColor.darkGray
-            }
-            
-            scrollView.addSubview(label)
+            scrollView.addSubview(articleTableView)
         }
     }
 
