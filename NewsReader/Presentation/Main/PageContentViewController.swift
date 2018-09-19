@@ -10,7 +10,7 @@ import UIKit
 
 /// MainPageViewController에 viewControllers로 추가되는 하위 VC.
 /// 각 페이지의 Contents를 담당함.
-class PageContentViewController: BaseViewController {
+class PageContentViewController: UIViewController {
     
     @IBOutlet weak var scrollView: ArticlePagingView!
     

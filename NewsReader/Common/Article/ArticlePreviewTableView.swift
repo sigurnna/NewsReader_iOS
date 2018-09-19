@@ -38,6 +38,7 @@ class ArticlePreviewTableView: UITableView {
             guard let cellType = self.type else { return }
             
             self.register(cellType.nib, forCellReuseIdentifier: cellType.identifier)
+            self.separatorStyle = .none
             self.isScrollEnabled = false
             
             // Bind cells
