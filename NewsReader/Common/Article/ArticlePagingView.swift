@@ -35,7 +35,6 @@ class ArticlePagingView: UIScrollView {
     }
     
     override func layoutSubviews() {
-        print(String(format: "currentPage: %d", currentPage))
         for (idx, subview) in self.subviews.reversed().enumerated() {
             if currentPage + 1 == idx {
                 if let offsetY = self.offset?.y {

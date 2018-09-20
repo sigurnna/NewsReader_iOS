@@ -8,11 +8,20 @@
 
 import UIKit
 
+enum PageContentType {
+    case today
+    case star
+    case group
+}
+
 /// MainPageViewController에 viewControllers로 추가되는 하위 VC.
 /// 각 페이지의 Contents를 담당함.
 class PageContentViewController: UIViewController {
     
     @IBOutlet weak var scrollView: ArticlePagingView!
+    
+    // Required
+    var type: PageContentType!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,5 +43,11 @@ class PageContentViewController: UIViewController {
             scrollView.addSubview(articleTableView)
         }
     }
+}
 
+// MARK - ViewControllerInterface
+extension PageContentViewController: ViewControllerInterface {
+    static func instance() -> Self {
+        return instance(storyboardName: "Main", identifier: "\(PageContentViewController.self)")
+    }
 }

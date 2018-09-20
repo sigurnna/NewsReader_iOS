@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dpJ-Ea-Nfz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,40 +20,83 @@
                         <color key="barTintColor" red="0.97254901960784312" green="0.73725490196078436" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Icp-nf-iZU" kind="relationship" relationship="rootViewController" id="cuc-qm-ft6"/>
+                        <segue destination="CKa-jJ-1iu" kind="relationship" relationship="rootViewController" id="CRe-4q-bdz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2y-3X-Mae" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-362" y="152"/>
         </scene>
+        <!--Main View Controller-->
+        <scene sceneID="MnJ-eM-uJf">
+            <objects>
+                <viewController id="CKa-jJ-1iu" customClass="MainViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5R5-Jn-jgD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiQ-XK-o14">
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                                <connections>
+                                    <segue destination="Icp-nf-iZU" kind="embed" id="S7H-EA-7TW"/>
+                                </connections>
+                            </containerView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="LIZ-vw-2xa" customClass="ArticlePageControl" customModule="NewsReader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nv6-MS-Vz0"/>
+                                </constraints>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LIZ-vw-2xa" firstAttribute="top" secondItem="fiQ-XK-o14" secondAttribute="bottom" id="Bsg-WH-Z3H"/>
+                            <constraint firstItem="fiQ-XK-o14" firstAttribute="top" secondItem="NFI-Ew-lMZ" secondAttribute="top" id="DKj-tc-8gN"/>
+                            <constraint firstItem="NFI-Ew-lMZ" firstAttribute="trailing" secondItem="LIZ-vw-2xa" secondAttribute="trailing" id="Srq-CJ-Ogm"/>
+                            <constraint firstItem="LIZ-vw-2xa" firstAttribute="leading" secondItem="NFI-Ew-lMZ" secondAttribute="leading" id="Z17-wp-Fgk"/>
+                            <constraint firstItem="NFI-Ew-lMZ" firstAttribute="trailing" secondItem="fiQ-XK-o14" secondAttribute="trailing" id="cvO-Ha-O10"/>
+                            <constraint firstItem="NFI-Ew-lMZ" firstAttribute="bottom" secondItem="LIZ-vw-2xa" secondAttribute="bottom" id="qea-AT-e42"/>
+                            <constraint firstItem="fiQ-XK-o14" firstAttribute="leading" secondItem="NFI-Ew-lMZ" secondAttribute="leading" id="wmt-DX-sFM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NFI-Ew-lMZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ESi-qY-BfQ"/>
+                    <connections>
+                        <outlet property="pageControl" destination="LIZ-vw-2xa" id="Z8w-xc-LNB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E1A-cz-sGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="351" y="152"/>
+        </scene>
         <!--Main Page View Controller-->
         <scene sceneID="ocU-at-8Ug">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Icp-nf-iZU" customClass="MainPageViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Icp-nf-iZU" customClass="MainPageViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="pym-Bn-Z9K"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqq-kG-Ltq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="399" y="152"/>
+            <point key="canvasLocation" x="1050" y="152"/>
         </scene>
         <!--Page Content View Controller-->
         <scene sceneID="zgc-Pw-s78">
             <objects>
                 <viewController storyboardIdentifier="PageContentViewController" id="nsx-gZ-2M6" customClass="PageContentViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MvI-AY-jYA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeN-qC-baB" customClass="ArticlePagingView" customModule="NewsReader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TBK-jo-6x7" firstAttribute="bottom" secondItem="OeN-qC-baB" secondAttribute="bottom" id="POP-4k-KFS"/>
                             <constraint firstItem="TBK-jo-6x7" firstAttribute="trailing" secondItem="OeN-qC-baB" secondAttribute="trailing" id="RAm-O3-TQB"/>
                             <constraint firstItem="OeN-qC-baB" firstAttribute="top" secondItem="TBK-jo-6x7" secondAttribute="top" id="UcC-1V-zlk"/>
+                            <constraint firstItem="TBK-jo-6x7" firstAttribute="bottom" secondItem="OeN-qC-baB" secondAttribute="bottom" id="rSP-aM-3gS"/>
                             <constraint firstItem="OeN-qC-baB" firstAttribute="leading" secondItem="TBK-jo-6x7" secondAttribute="leading" id="stv-mJ-g5Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TBK-jo-6x7"/>
@@ -60,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Opu-Yq-pbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1191" y="152"/>
+            <point key="canvasLocation" x="1726" y="152"/>
         </scene>
     </scenes>
 </document>

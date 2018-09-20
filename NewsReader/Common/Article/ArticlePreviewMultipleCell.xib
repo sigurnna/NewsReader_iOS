@@ -12,26 +12,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticlePreviewMultipleCell" rowHeight="96" id="FYe-4K-sOK" customClass="ArticlePreviewMultipleCell" customModule="NewsReader" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticlePreviewMultipleCell" rowHeight="108" id="FYe-4K-sOK" customClass="ArticlePreviewMultipleCell" customModule="NewsReader" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FYe-4K-sOK" id="ezZ-HE-McU">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jsb-Ve-I5V">
-                        <rect key="frame" x="10" y="10" width="355" height="49.5"/>
+                        <rect key="frame" x="10" y="10" width="355" height="61.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="300-eX-hyK">
-                                <rect key="frame" x="0.0" y="0.0" width="117" height="49.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="117" height="61.5"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
+                                        <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample article titles..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sg6-RI-OMX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample article titles..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sg6-RI-OMX">
                                 <rect key="frame" x="127" y="0.0" width="139.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
@@ -40,14 +40,22 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sample article contents" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzF-fy-HOt">
                                 <rect key="frame" x="127" y="19" width="141.5" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.56862745098039214" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Verge - 몇 x 전" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1E-J0-4wk">
+                                <rect key="frame" x="127" y="45" width="112" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.56862745098039214" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="c1E-J0-4wk" secondAttribute="bottom" id="1vk-XG-wl1"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Sg6-RI-OMX" secondAttribute="trailing" constant="10" id="88j-PH-pgH"/>
                             <constraint firstItem="300-eX-hyK" firstAttribute="leading" secondItem="Jsb-Ve-I5V" secondAttribute="leading" id="9CL-wa-QCj"/>
+                            <constraint firstItem="c1E-J0-4wk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fzF-fy-HOt" secondAttribute="bottom" constant="2" id="Esf-jB-0G4"/>
                             <constraint firstItem="fzF-fy-HOt" firstAttribute="top" secondItem="Sg6-RI-OMX" secondAttribute="bottom" constant="2" id="FTc-xD-d5l"/>
                             <constraint firstAttribute="bottom" secondItem="300-eX-hyK" secondAttribute="bottom" id="G1J-2c-aNl"/>
                             <constraint firstItem="Sg6-RI-OMX" firstAttribute="top" secondItem="Jsb-Ve-I5V" secondAttribute="top" id="NcU-Rx-kPV"/>
@@ -56,6 +64,7 @@
                             <constraint firstItem="fzF-fy-HOt" firstAttribute="leading" secondItem="300-eX-hyK" secondAttribute="trailing" constant="10" id="gj0-Nh-i8D"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fzF-fy-HOt" secondAttribute="trailing" constant="10" id="p5E-Hx-yaj"/>
                             <constraint firstItem="Sg6-RI-OMX" firstAttribute="leading" secondItem="300-eX-hyK" secondAttribute="trailing" constant="10" id="uoX-1C-jYd"/>
+                            <constraint firstItem="c1E-J0-4wk" firstAttribute="leading" secondItem="300-eX-hyK" secondAttribute="trailing" constant="10" id="x8P-FD-XmK"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -71,7 +80,7 @@
                 <outlet property="thumbnailView" destination="300-eX-hyK" id="QVi-c6-FG3"/>
                 <outlet property="titleLabel" destination="Sg6-RI-OMX" id="QUH-m7-Oao"/>
             </connections>
-            <point key="canvasLocation" x="-52.5" y="92"/>
+            <point key="canvasLocation" x="-52.5" y="98"/>
         </tableViewCell>
     </objects>
 </document>
