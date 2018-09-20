@@ -36,36 +36,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiQ-XK-o14">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="566"/>
                                 <connections>
                                     <segue destination="Icp-nf-iZU" kind="embed" id="S7H-EA-7TW"/>
                                 </connections>
                             </containerView>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o75-gt-Lpa">
-                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem title="Today" image="iconToday" selectedImage="iconToday" id="dMB-Ch-p8I" customClass="DynamicTabBarItem" customModule="NewsReader" customModuleProvider="target"/>
-                                    <tabBarItem title="Star" image="iconStar" selectedImage="iconStar" id="L2q-nT-oac" customClass="DynamicTabBarItem" customModule="NewsReader" customModuleProvider="target"/>
-                                </items>
-                            </tabBar>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="tN4-7g-S0y" customClass="ArticlePageControl" customModule="NewsReader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="630" width="375" height="37"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="NFI-Ew-lMZ" firstAttribute="bottom" secondItem="tN4-7g-S0y" secondAttribute="bottom" id="CB5-xK-72F"/>
                             <constraint firstItem="fiQ-XK-o14" firstAttribute="top" secondItem="NFI-Ew-lMZ" secondAttribute="top" id="DKj-tc-8gN"/>
-                            <constraint firstItem="o75-gt-Lpa" firstAttribute="leading" secondItem="NFI-Ew-lMZ" secondAttribute="leading" id="Hlq-bd-Bk4"/>
                             <constraint firstItem="NFI-Ew-lMZ" firstAttribute="trailing" secondItem="fiQ-XK-o14" secondAttribute="trailing" id="cvO-Ha-O10"/>
-                            <constraint firstItem="o75-gt-Lpa" firstAttribute="top" secondItem="fiQ-XK-o14" secondAttribute="bottom" id="e9E-bn-FNh"/>
-                            <constraint firstItem="NFI-Ew-lMZ" firstAttribute="trailing" secondItem="o75-gt-Lpa" secondAttribute="trailing" id="fk5-Hb-nOK"/>
-                            <constraint firstItem="NFI-Ew-lMZ" firstAttribute="bottom" secondItem="o75-gt-Lpa" secondAttribute="bottom" id="tar-2v-18V"/>
+                            <constraint firstItem="tN4-7g-S0y" firstAttribute="top" secondItem="fiQ-XK-o14" secondAttribute="bottom" id="oIv-li-hRK"/>
+                            <constraint firstItem="NFI-Ew-lMZ" firstAttribute="trailing" secondItem="tN4-7g-S0y" secondAttribute="trailing" id="q8z-gB-upk"/>
+                            <constraint firstItem="tN4-7g-S0y" firstAttribute="leading" secondItem="NFI-Ew-lMZ" secondAttribute="leading" id="uaA-aO-0PT"/>
                             <constraint firstItem="fiQ-XK-o14" firstAttribute="leading" secondItem="NFI-Ew-lMZ" secondAttribute="leading" id="wmt-DX-sFM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NFI-Ew-lMZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="ESi-qY-BfQ"/>
-                    <connections>
-                        <outlet property="tabBar" destination="o75-gt-Lpa" id="fea-qh-dtk"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1A-cz-sGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,8 +103,4 @@
             <point key="canvasLocation" x="1726" y="152"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="iconStar" width="26" height="26"/>
-        <image name="iconToday" width="50" height="50"/>
-    </resources>
 </document>

@@ -103,14 +103,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		6330F2D82153E08700226906 /* Deprecated */ = {
-			isa = PBXGroup;
-			children = (
-				63BCC1692153358C005478CB /* ArticlePageControl.swift */,
-			);
-			path = Deprecated;
-			sourceTree = "<group>";
-		};
 		6330F2DB2153E1FB00226906 /* Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,7 +165,6 @@
 		63AE192D2144DCDF00EF6BB9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				6330F2D82153E08700226906 /* Deprecated */,
 				63BCC16B21533C94005478CB /* Extensions */,
 				63BCC166215325EC005478CB /* Protocol */,
 				635EDA6B2150D96B00F1329F /* Model */,
@@ -195,8 +186,9 @@
 			children = (
 				6330F2DB2153E1FB00226906 /* Page */,
 				63AE19362144DDC300EF6BB9 /* Main.storyboard */,
-				630760B52153932000CAAFBC /* MainViewController.swift */,
+				63BCC1692153358C005478CB /* ArticlePageControl.swift */,
 				6330F2DC2153E21500226906 /* DynamicTabBarItem.swift */,
+				630760B52153932000CAAFBC /* MainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
