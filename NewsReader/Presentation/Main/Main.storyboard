@@ -36,34 +36,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiQ-XK-o14">
-                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <connections>
                                     <segue destination="Icp-nf-iZU" kind="embed" id="S7H-EA-7TW"/>
                                 </connections>
                             </containerView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="LIZ-vw-2xa" customClass="ArticlePageControl" customModule="NewsReader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="nv6-MS-Vz0"/>
-                                </constraints>
-                            </pageControl>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o75-gt-Lpa">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="Today" image="iconToday" selectedImage="iconToday" id="dMB-Ch-p8I" customClass="DynamicTabBarItem" customModule="NewsReader" customModuleProvider="target"/>
+                                    <tabBarItem title="Star" image="iconStar" selectedImage="iconStar" id="L2q-nT-oac" customClass="DynamicTabBarItem" customModule="NewsReader" customModuleProvider="target"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="LIZ-vw-2xa" firstAttribute="top" secondItem="fiQ-XK-o14" secondAttribute="bottom" id="Bsg-WH-Z3H"/>
                             <constraint firstItem="fiQ-XK-o14" firstAttribute="top" secondItem="NFI-Ew-lMZ" secondAttribute="top" id="DKj-tc-8gN"/>
-                            <constraint firstItem="NFI-Ew-lMZ" firstAttribute="trailing" secondItem="LIZ-vw-2xa" secondAttribute="trailing" id="Srq-CJ-Ogm"/>
-                            <constraint firstItem="LIZ-vw-2xa" firstAttribute="leading" secondItem="NFI-Ew-lMZ" secondAttribute="leading" id="Z17-wp-Fgk"/>
+                            <constraint firstItem="o75-gt-Lpa" firstAttribute="leading" secondItem="NFI-Ew-lMZ" secondAttribute="leading" id="Hlq-bd-Bk4"/>
                             <constraint firstItem="NFI-Ew-lMZ" firstAttribute="trailing" secondItem="fiQ-XK-o14" secondAttribute="trailing" id="cvO-Ha-O10"/>
-                            <constraint firstItem="NFI-Ew-lMZ" firstAttribute="bottom" secondItem="LIZ-vw-2xa" secondAttribute="bottom" id="qea-AT-e42"/>
+                            <constraint firstItem="o75-gt-Lpa" firstAttribute="top" secondItem="fiQ-XK-o14" secondAttribute="bottom" id="e9E-bn-FNh"/>
+                            <constraint firstItem="NFI-Ew-lMZ" firstAttribute="trailing" secondItem="o75-gt-Lpa" secondAttribute="trailing" id="fk5-Hb-nOK"/>
+                            <constraint firstItem="NFI-Ew-lMZ" firstAttribute="bottom" secondItem="o75-gt-Lpa" secondAttribute="bottom" id="tar-2v-18V"/>
                             <constraint firstItem="fiQ-XK-o14" firstAttribute="leading" secondItem="NFI-Ew-lMZ" secondAttribute="leading" id="wmt-DX-sFM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NFI-Ew-lMZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="ESi-qY-BfQ"/>
                     <connections>
-                        <outlet property="pageControl" destination="LIZ-vw-2xa" id="Z8w-xc-LNB"/>
+                        <outlet property="tabBar" destination="o75-gt-Lpa" id="fea-qh-dtk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1A-cz-sGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,4 +111,8 @@
             <point key="canvasLocation" x="1726" y="152"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconStar" width="26" height="26"/>
+        <image name="iconToday" width="50" height="50"/>
+    </resources>
 </document>

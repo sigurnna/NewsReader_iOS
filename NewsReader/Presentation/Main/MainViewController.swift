@@ -9,10 +9,11 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    
-    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var tabBar: UITabBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
 }
