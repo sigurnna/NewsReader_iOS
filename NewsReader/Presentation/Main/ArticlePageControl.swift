@@ -16,43 +16,39 @@ class ArticlePageControl: UIPageControl {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.numberOfPages = 3
+        self.numberOfPages = 5
         self.currentPage = 0
         
-        self.pageIndicatorTintColor = unselectColor
-        self.currentPageIndicatorTintColor = selectColor
+        self.pageIndicatorTintColor = UIColor.clear
+        self.currentPageIndicatorTintColor = UIColor.clear
         self.clipsToBounds = false
+        
+        self.isUserInteractionEnabled = false
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        // Scale Dots
-        self.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        for (page, subview) in self.subviews.enumerated() {
+            if page < 2 {
+                let imageView = UIImageView()
+                imageView.frame = CGRect(x: -4, y: -4, width: 10, height: 10)
+                imageView.image = imageWithPage(page)?.withRenderingMode(.alwaysTemplate)
+                imageView.tintColor = (page == self.currentPage) ? selectColor : unselectColor
+                
+                subview.addSubview(imageView)
+            } else {
+                let dotView = UIView()
+                dotView.frame = CGRect(x: 0, y: 0, width: 3, height: 3)
+                dotView.backgroundColor = (page == self.currentPage) ? selectColor : unselectColor
+                dotView.layer.masksToBounds = true
+                dotView.layer.cornerRadius = dotView.frame.height / 2
+                
+                subview.addSubview(dotView)
+            }
+        }
         
-//        for (page, subview) in self.subviews.enumerated() {
-//            let pageView = UIView()
-//            pageView.frame = CGRect(x: -7, y: -8, width: 22, height: 22)
-//            pageView.layer.masksToBounds = true
-//            pageView.layer.cornerRadius = pageView.frame.height / 2
-//            pageView.layer.backgroundColor = (self.currentPage == page) ? selectColor.cgColor : unselectColor.cgColor
-//
-//            if page < currentPage {
-//                pageView.frame.origin.x -= 5
-//            } else if page > currentPage {
-//                pageView.frame.origin.x += 5
-//            }
-//
-//            let imageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 12, height: 12))
-//            imageView.image = imageWithPage(page)
-//
-//            pageView.addSubview(imageView)
-//            subview.addSubview(pageView)
-//
-//            if page != self.currentPage {
-//                pageView.isHidden = true
-//            }
-//        }
+        self.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
     }
 }
 
@@ -64,8 +60,7 @@ fileprivate extension ArticlePageControl {
             return UIImage(named: "iconToday")
         } else if page == 1 {
             return UIImage(named: "iconStar")
-        } else {
-            return UIImage(named: "iconStar")
         }
+        return nil
     }
 }
