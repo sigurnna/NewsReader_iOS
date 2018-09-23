@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4EA9D8E88637D06392074DB1 /* Pods_NewsReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234D07A1BA899A92900B82C4 /* Pods_NewsReaderTests.framework */; };
 		630760B62153932000CAAFBC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630760B52153932000CAAFBC /* MainViewController.swift */; };
-		6330F2DD2153E21500226906 /* DynamicTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6330F2DC2153E21500226906 /* DynamicTabBarItem.swift */; };
+		632D4367215546F5009B4F30 /* NSNotification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632D4366215546F5009B4F30 /* NSNotification.Name+Extension.swift */; };
 		6346A7002150F22C0080F1D1 /* ArticlePreviewMultipleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346A6FF2150F22C0080F1D1 /* ArticlePreviewMultipleCell.swift */; };
 		6346A7022150F3F30080F1D1 /* ArticlePreviewSingleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346A7012150F3F30080F1D1 /* ArticlePreviewSingleCell.swift */; };
 		6346A7042150F4750080F1D1 /* ArticlePreviewMultipleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6346A7032150F4750080F1D1 /* ArticlePreviewMultipleCell.xib */; };
@@ -44,7 +44,7 @@
 		234D07A1BA899A92900B82C4 /* Pods_NewsReaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsReaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2476718EBA52DB7A77BF1F60 /* Pods_NewsReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		630760B52153932000CAAFBC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		6330F2DC2153E21500226906 /* DynamicTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTabBarItem.swift; sourceTree = "<group>"; };
+		632D4366215546F5009B4F30 /* NSNotification.Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification.Name+Extension.swift"; sourceTree = "<group>"; };
 		6346A6FF2150F22C0080F1D1 /* ArticlePreviewMultipleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePreviewMultipleCell.swift; sourceTree = "<group>"; };
 		6346A7012150F3F30080F1D1 /* ArticlePreviewSingleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePreviewSingleCell.swift; sourceTree = "<group>"; };
 		6346A7032150F4750080F1D1 /* ArticlePreviewMultipleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticlePreviewMultipleCell.xib; sourceTree = "<group>"; };
@@ -101,6 +101,14 @@
 				EF55D27F96AF9E901AB82284 /* Pods-NewsReaderTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		632D4365215546C6009B4F30 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				632D4366215546F5009B4F30 /* NSNotification.Name+Extension.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		6330F2DB2153E1FB00226906 /* Page */ = {
@@ -165,6 +173,7 @@
 		63AE192D2144DCDF00EF6BB9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				632D4365215546C6009B4F30 /* Notifications */,
 				63BCC16B21533C94005478CB /* Extensions */,
 				63BCC166215325EC005478CB /* Protocol */,
 				635EDA6B2150D96B00F1329F /* Model */,
@@ -187,7 +196,6 @@
 				6330F2DB2153E1FB00226906 /* Page */,
 				63AE19362144DDC300EF6BB9 /* Main.storyboard */,
 				63BCC1692153358C005478CB /* ArticlePageControl.swift */,
-				6330F2DC2153E21500226906 /* DynamicTabBarItem.swift */,
 				630760B52153932000CAAFBC /* MainViewController.swift */,
 			);
 			path = Main;
@@ -399,9 +407,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				635EDA6D2150D98600F1329F /* ArticleModel.swift in Sources */,
-				6330F2DD2153E21500226906 /* DynamicTabBarItem.swift in Sources */,
 				63DF4B56214F7A63005642EE /* ArticlePagingView.swift in Sources */,
 				630760B62153932000CAAFBC /* MainViewController.swift in Sources */,
+				632D4367215546F5009B4F30 /* NSNotification.Name+Extension.swift in Sources */,
 				6346A7022150F3F30080F1D1 /* ArticlePreviewSingleCell.swift in Sources */,
 				63AE19352144DD7A00EF6BB9 /* PageContentViewController.swift in Sources */,
 				635EDA6A2150CEA900F1329F /* ArticlePreviewTableView.swift in Sources */,

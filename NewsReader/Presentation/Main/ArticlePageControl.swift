@@ -12,6 +12,12 @@ class ArticlePageControl: UIPageControl {
     
     let selectColor = UIColor.hexColor(0xF8BC2B)
     let unselectColor = UIColor.hexColor(0xDCDCDC)
+    
+    override var currentPage: Int {
+        didSet {
+            layoutSubviews()
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +34,8 @@ class ArticlePageControl: UIPageControl {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        print(String(format: "Current Page: %d", self.currentPage))
         
         for (page, subview) in self.subviews.enumerated() {
             if page < 2 {

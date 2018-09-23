@@ -9,45 +9,72 @@
 import UIKit
 
 class MainPageViewController: UIPageViewController {
-
+    
+    var numberOfPages: Int = 5
+    var currentPage: Int = 0 {
+        didSet {
+            NotificationCenter.default.post(name: .pageMoved, object: self, userInfo: ["page": currentPage])
+        }
+    }
+    
+    var currentVC: PageContentViewController? {
+        return self.viewControllers?.first as? PageContentViewController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let pageContentVC = PageContentViewController.instance()
-        pageContentVC.type = .today
-
+        let firstVC = makePageContentVC(type: .today, page: 0)
+        
+        self.delegate = self
         self.dataSource = self
-        self.setViewControllers([pageContentVC], direction: .forward, animated: true, completion: nil)
+        self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
+    }
+}
+
+// MARK: - Internal
+fileprivate extension MainPageViewController {
+
+    func makePageContentVC(type: PageContentType, page: Int) -> PageContentViewController {
+        let pageVC = PageContentViewController.instance()
+        pageVC.type = type
+        pageVC.page = page
+        
+        return pageVC
     }
 }
 
 // MARK: - UIPageViewControllerDataSource
 extension MainPageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        let contentVC = viewController as! PageContentViewController
-        let prevVC = PageContentViewController.instance()
+        guard let currentVC = self.currentVC else { return nil }
         
-        if contentVC.type == .group {
-            prevVC.type = .star
-            return prevVC
-        } else if contentVC.type == .star {
-            prevVC.type = .today
-            return prevVC
+        let prevPage = currentVC.page - 1
+
+        if prevPage >= 0 {
+            if prevPage == 0 {
+                return makePageContentVC(type: .today, page: prevPage)
+            } else if prevPage == 1 {
+                return makePageContentVC(type: .star, page: prevPage)
+            } else {
+                return makePageContentVC(type: .group, page: prevPage)
+            }
         }
         
         return nil
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let contentVC = viewController as! PageContentViewController
-        let nextVC = PageContentViewController.instance()
+        guard let currentVC = self.currentVC else { return nil }
         
-        if contentVC.type == .today {
-            nextVC.type = .star
-            return nextVC
-        } else if contentVC.type == .star {
-            nextVC.type = .group
-            return nextVC
+        let nextPage = currentVC.page + 1
+
+        if nextPage < self.numberOfPages {
+            if nextPage == 1 {
+                return makePageContentVC(type: .star, page: nextPage)
+            } else {
+                return makePageContentVC(type: .group, page: nextPage)
+            }
         }
         
         return nil
@@ -55,20 +82,12 @@ extension MainPageViewController: UIPageViewControllerDataSource {
 }
 
 // MARK: - UIPageViewControllerDelegate
-//extension MainPageViewController: UIPageViewControllerDelegate {
-//    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-//        return 3
-//    }
-//
-//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-//        let vc = pageViewController.presentedViewController as! PageContentViewController
-//
-//        if vc.type == .today {
-//            return 0
-//        } else if vc.type == .star {
-//            return 1
-//        } else {
-//            return 2
-//        }
-//    }
-//}
+extension MainPageViewController: UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard completed else { return }
+
+        if let currentVC = self.currentVC {
+            self.currentPage = currentVC.page
+        }
+    }
+}

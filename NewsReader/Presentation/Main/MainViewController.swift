@@ -9,11 +9,18 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    @IBOutlet weak var tabBar: UITabBar!
+    
+    @IBOutlet weak var pageControl: ArticlePageControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(didPageMoved(_:)), name: .pageMoved, object: nil)
+    }
+    
+    @objc func didPageMoved(_ notification: Notification) {
+        if let page = notification.userInfo?["page"] as? Int {
+            self.pageControl.currentPage = page
+        }
     }
 }

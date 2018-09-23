@@ -22,6 +22,7 @@ class PageContentViewController: UIViewController {
     
     // Required
     var type: PageContentType!
+    var page: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
