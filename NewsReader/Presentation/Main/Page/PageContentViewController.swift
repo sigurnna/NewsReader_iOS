@@ -20,13 +20,51 @@ class PageContentViewController: UIViewController {
     
     @IBOutlet weak var scrollView: ArticlePagingView!
     
+    fileprivate let searchBarItem = UIBarButtonItem(title: "Search", style: .plain, target: self, action: #selector(didSearchBarItemTapped))
+    fileprivate let addBarItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(didAddBarItemTapped))
+    
     // Required
-    var type: PageContentType!
     var page: Int!
+    var type: PageContentType! {
+        didSet {
+            switch self.type! {
+            case .today:
+                self.useSearchBarItem = true
+            case .star:
+                self.useSearchBarItem = true
+            case .group:
+                self.useSearchBarItem = true
+                self.useAddBarItem = true
+            }
+        }
+    }
+    
+    // "Search" Navigation Button 사용 여부.
+    var useSearchBarItem: Bool = false {
+        didSet {
+            if self.useSearchBarItem {
+                self.addNavigationItem(self.searchBarItem)
+            } else {
+                self.removeNavigationItem(self.searchBarItem)
+            }
+        }
+    }
+    
+    // "Add" Navigation Button 사용 여부.
+    var useAddBarItem: Bool = false {
+        didSet {
+            if self.useAddBarItem {
+                self.addNavigationItem(self.addBarItem)
+            } else {
+                self.removeNavigationItem(self.addBarItem)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        #if DEBUG
         var articles = [ArticleModel]()
         
         // Make Temp Models
@@ -42,6 +80,40 @@ class PageContentViewController: UIViewController {
             articleTableView.type = .multiple
             
             scrollView.addSubview(articleTableView)
+        }
+        #endif
+    }
+    
+    // MARK: - UIBarButtonItem Actions
+    @objc func didSearchBarItemTapped() {
+        
+    }
+    
+    @objc func didAddBarItemTapped() {
+        
+    }
+}
+
+// MARK: - Internal
+fileprivate extension PageContentViewController {
+    
+    func addNavigationItem(_ barButtonItem: UIBarButtonItem) {
+        if var rightBarButtonItems = self.navigationController?.navigationItem.rightBarButtonItems {
+            if rightBarButtonItems.isEmpty {
+                rightBarButtonItems = [barButtonItem]
+            } else {
+                rightBarButtonItems.append(barButtonItem)
+            }
+        }
+    }
+    
+    func removeNavigationItem(_ barButtonItem: UIBarButtonItem) {
+        if var rightBarButtonItems = self.navigationController?.navigationItem.rightBarButtonItems {
+            if let removeTarget = (rightBarButtonItems.filter { $0 === barButtonItem }.first) {
+                rightBarButtonItems.removeAll { (barButtonItem) -> Bool in
+                    return barButtonItem === removeTarget
+                }
+            }
         }
     }
 }

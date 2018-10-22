@@ -103,14 +103,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		632D4365215546C6009B4F30 /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				632D4366215546F5009B4F30 /* NSNotification.Name+Extension.swift */,
-			);
-			path = Notifications;
-			sourceTree = "<group>";
-		};
 		6330F2DB2153E1FB00226906 /* Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,7 +165,6 @@
 		63AE192D2144DCDF00EF6BB9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				632D4365215546C6009B4F30 /* Notifications */,
 				63BCC16B21533C94005478CB /* Extensions */,
 				63BCC166215325EC005478CB /* Protocol */,
 				635EDA6B2150D96B00F1329F /* Model */,
@@ -212,6 +203,7 @@
 		63BCC16B21533C94005478CB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				632D4366215546F5009B4F30 /* NSNotification.Name+Extension.swift */,
 				63BCC16C21533F5B005478CB /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
@@ -551,6 +543,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
