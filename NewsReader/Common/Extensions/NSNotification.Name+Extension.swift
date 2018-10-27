@@ -10,4 +10,8 @@ import Foundation
 
 extension NSNotification.Name {
     static let pageMoved = NSNotification.Name(rawValue: "pageMoved")
+    
+    static let clearBarItem = NSNotification.Name(rawValue: "clearBarItem")
+    static let useSearchBarItem = NSNotification.Name(rawValue: "useSearchBarItem")
+    static let useAddBarItem = NSNotification.Name(rawValue: "useAddBarItem")
 }
