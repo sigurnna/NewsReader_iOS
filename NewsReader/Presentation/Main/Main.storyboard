@@ -109,5 +109,56 @@
             </objects>
             <point key="canvasLocation" x="1726" y="152"/>
         </scene>
+        <!--Page Detail View Controller-->
+        <scene sceneID="Mj1-NA-sBZ">
+            <objects>
+                <viewController storyboardIdentifier="PageDetailViewController" id="dZc-Tn-Ipi" customClass="PageDetailViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wcb-gd-lHr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="us9-Nn-prD">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R30-f8-3xZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hRA-ru-qJ7">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="388"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="hRA-ru-qJ7" firstAttribute="height" secondItem="R30-f8-3xZ" secondAttribute="height" multiplier="0.6" id="DVE-yB-VcW"/>
+                                            <constraint firstItem="hRA-ru-qJ7" firstAttribute="leading" secondItem="R30-f8-3xZ" secondAttribute="leading" id="Gr8-id-7Mg"/>
+                                            <constraint firstItem="hRA-ru-qJ7" firstAttribute="top" secondItem="R30-f8-3xZ" secondAttribute="top" id="QCb-cC-uD2"/>
+                                            <constraint firstAttribute="trailing" secondItem="hRA-ru-qJ7" secondAttribute="trailing" id="xXl-Mf-xCr"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="R30-f8-3xZ" firstAttribute="width" secondItem="us9-Nn-prD" secondAttribute="width" id="2Bu-Gk-G2v"/>
+                                    <constraint firstAttribute="trailing" secondItem="R30-f8-3xZ" secondAttribute="trailing" id="KyJ-di-RH3"/>
+                                    <constraint firstItem="R30-f8-3xZ" firstAttribute="top" secondItem="us9-Nn-prD" secondAttribute="top" id="bO0-Sv-A5v"/>
+                                    <constraint firstItem="R30-f8-3xZ" firstAttribute="leading" secondItem="us9-Nn-prD" secondAttribute="leading" id="cXv-Zk-4MG"/>
+                                    <constraint firstItem="R30-f8-3xZ" firstAttribute="height" secondItem="us9-Nn-prD" secondAttribute="height" priority="250" id="uq5-Em-sG5"/>
+                                    <constraint firstAttribute="bottom" secondItem="R30-f8-3xZ" secondAttribute="bottom" id="ztI-gu-aOD"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="us9-Nn-prD" firstAttribute="leading" secondItem="L5Y-U7-s61" secondAttribute="leading" id="4c9-gG-7f1"/>
+                            <constraint firstItem="L5Y-U7-s61" firstAttribute="bottom" secondItem="us9-Nn-prD" secondAttribute="bottom" id="A4m-PK-ixU"/>
+                            <constraint firstItem="L5Y-U7-s61" firstAttribute="trailing" secondItem="us9-Nn-prD" secondAttribute="trailing" id="hGy-do-6VH"/>
+                            <constraint firstItem="us9-Nn-prD" firstAttribute="top" secondItem="L5Y-U7-s61" secondAttribute="top" id="yj8-s2-Z09"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L5Y-U7-s61"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eZb-k3-6Cm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2457" y="153"/>
+        </scene>
     </scenes>
 </document>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 enum PageContentType {
     case today
@@ -19,6 +20,8 @@ enum PageContentType {
 class PageContentViewController: UIViewController {
     
     @IBOutlet weak var scrollView: ArticlePagingView!
+    
+    let disposeBag = DisposeBag()
     
     // Required
     var page: Int!
@@ -69,10 +72,22 @@ class PageContentViewController: UIViewController {
             let articleTableView = ArticlePreviewTableView(frame: scrollView.bounds)
             articleTableView.items.accept(articles)
             articleTableView.type = .multiple
+            articleTableView.rx.itemSelected
+                .subscribe { (indexPath) in
+                    if let indexPath = indexPath.element {
+                        if let cell = articleTableView.cellForRow(at: indexPath) as? ArticlePreviewMultipleCell {
+                            let globalFrame = self.view.convert(cell.thumbnailView.frame, from: cell.thumbnailView)
+                            print(globalFrame)
+                        }
+                    }
+                }
+                .disposed(by: disposeBag)
             
             scrollView.addSubview(articleTableView)
         }
         #endif
+        
+        
     }
 }
 

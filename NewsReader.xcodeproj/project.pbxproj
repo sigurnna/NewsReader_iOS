@@ -14,6 +14,8 @@
 		6346A7022150F3F30080F1D1 /* ArticlePreviewSingleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346A7012150F3F30080F1D1 /* ArticlePreviewSingleCell.swift */; };
 		6346A7042150F4750080F1D1 /* ArticlePreviewMultipleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6346A7032150F4750080F1D1 /* ArticlePreviewMultipleCell.xib */; };
 		6346A7062150F4800080F1D1 /* ArticlePreviewSingleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6346A7052150F4800080F1D1 /* ArticlePreviewSingleCell.xib */; };
+		634CEBFC21841F8C00AEEEC6 /* PageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634CEBFB21841F8C00AEEEC6 /* PageDetailViewController.swift */; };
+		634CEBFE218429E900AEEEC6 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634CEBFD218429E900AEEEC6 /* UIView+Extensions.swift */; };
 		635EDA6A2150CEA900F1329F /* ArticlePreviewTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635EDA692150CEA900F1329F /* ArticlePreviewTableView.swift */; };
 		635EDA6D2150D98600F1329F /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635EDA6C2150D98600F1329F /* ArticleModel.swift */; };
 		63A68D512140066A00DC29CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A68D502140066A00DC29CC /* AppDelegate.swift */; };
@@ -49,6 +51,8 @@
 		6346A7012150F3F30080F1D1 /* ArticlePreviewSingleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePreviewSingleCell.swift; sourceTree = "<group>"; };
 		6346A7032150F4750080F1D1 /* ArticlePreviewMultipleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticlePreviewMultipleCell.xib; sourceTree = "<group>"; };
 		6346A7052150F4800080F1D1 /* ArticlePreviewSingleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticlePreviewSingleCell.xib; sourceTree = "<group>"; };
+		634CEBFB21841F8C00AEEEC6 /* PageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDetailViewController.swift; sourceTree = "<group>"; };
+		634CEBFD218429E900AEEEC6 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		635EDA692150CEA900F1329F /* ArticlePreviewTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePreviewTableView.swift; sourceTree = "<group>"; };
 		635EDA6C2150D98600F1329F /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		63A68D4D2140066A00DC29CC /* NewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +112,7 @@
 			children = (
 				63AE19322144DD4100EF6BB9 /* MainPageViewController.swift */,
 				63AE19342144DD7A00EF6BB9 /* PageContentViewController.swift */,
+				634CEBFB21841F8C00AEEEC6 /* PageDetailViewController.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 			children = (
 				632D4366215546F5009B4F30 /* NSNotification.Name+Extension.swift */,
 				63BCC16C21533F5B005478CB /* UIColor+Extension.swift */,
+				634CEBFD218429E900AEEEC6 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -398,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				634CEBFC21841F8C00AEEEC6 /* PageDetailViewController.swift in Sources */,
 				635EDA6D2150D98600F1329F /* ArticleModel.swift in Sources */,
 				63DF4B56214F7A63005642EE /* ArticlePagingView.swift in Sources */,
 				630760B62153932000CAAFBC /* MainViewController.swift in Sources */,
@@ -409,6 +416,7 @@
 				6346A7002150F22C0080F1D1 /* ArticlePreviewMultipleCell.swift in Sources */,
 				63AE19332144DD4100EF6BB9 /* MainPageViewController.swift in Sources */,
 				63A68D512140066A00DC29CC /* AppDelegate.swift in Sources */,
+				634CEBFE218429E900AEEEC6 /* UIView+Extensions.swift in Sources */,
 				63BCC16A2153358C005478CB /* ArticlePageControl.swift in Sources */,
 				63BCC16821532606005478CB /* ViewControllerInterface.swift in Sources */,
 			);

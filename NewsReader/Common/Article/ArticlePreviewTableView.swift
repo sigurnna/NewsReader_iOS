@@ -49,6 +49,7 @@ class ArticlePreviewTableView: UITableView {
                             let singleCell = cell as! ArticlePreviewSingleCell
                         } else {
                             let multipleCell = cell as! ArticlePreviewMultipleCell
+                            multipleCell.selectionStyle = .none
                             multipleCell.thumbnailView.image = UIImage(named: "sample1")
                             multipleCell.titleLabel.text = "Google releases Chrome OS 69 with new Material Theme design and Linux support"
                             multipleCell.descLabel.text = "Google's big chrome overhaul that arrived on desktop and mobile earlier this month is comming to CHromebooks today with the release of CHrome OS version 69."

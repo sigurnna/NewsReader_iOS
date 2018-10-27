@@ -34,9 +34,7 @@ class ArticlePageControl: UIPageControl {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        print(String(format: "Current Page: %d", self.currentPage))
-        
+                
         for (page, subview) in self.subviews.enumerated() {
             if page < 2 {
                 let imageView = UIImageView()
