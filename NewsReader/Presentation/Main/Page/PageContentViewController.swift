@@ -76,8 +76,14 @@ class PageContentViewController: UIViewController {
                 .subscribe { (indexPath) in
                     if let indexPath = indexPath.element {
                         if let cell = articleTableView.cellForRow(at: indexPath) as? ArticlePreviewMultipleCell {
-                            let globalFrame = self.view.convert(cell.thumbnailView.frame, from: cell.thumbnailView)
+                            let globalFrame = self.view.convert(cell.thumbnailView.frame, from: cell.thumbnailView.superview!)
+                            let detailVC = PageDetailViewController.instance()
+                            detailVC.mainImage = cell.thumbnailView.image
+                            detailVC.mainImageFrame = globalFrame
+                            
                             print(globalFrame)
+                            
+                            self.navigationController?.pushViewController(detailVC, animated: false)
                         }
                     }
                 }

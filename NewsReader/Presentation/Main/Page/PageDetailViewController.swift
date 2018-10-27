@@ -10,10 +10,24 @@ import UIKit
 
 class PageDetailViewController: UIViewController {
     
-    var imageViewWithAnimate: UIImageView?
+    @IBOutlet weak fileprivate var scrollView: UIScrollView!
+    @IBOutlet weak fileprivate var mainImageView: UIImageView!
+    
+    // Set from outside.
+    var mainImage: UIImage?
+    var mainImageFrame: CGRect?
+    
+    var imageViewWithAnimating: UIImageView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let image = self.mainImage, let imageFrame = self.mainImageFrame {
+            self.imageViewWithAnimating = UIImageView(image: image)
+            self.imageViewWithAnimating!.frame = imageFrame
+            
+            self.scrollView.addSubview(self.imageViewWithAnimating!)
+        }
     }
 }
 
