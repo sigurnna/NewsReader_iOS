@@ -55,6 +55,8 @@ class PageContentViewController: UIViewController {
         }
     }
     
+    fileprivate var thumbnailWithAnimate: UIImageView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -79,11 +81,10 @@ class PageContentViewController: UIViewController {
                             let globalFrame = self.view.convert(cell.thumbnailView.frame, from: cell.thumbnailView.superview!)
                             let detailVC = PageDetailViewController.instance()
                             detailVC.mainImage = cell.thumbnailView.image
-                            detailVC.mainImageFrame = globalFrame
                             
-                            print(globalFrame)
-                            
-                            self.navigationController?.pushViewController(detailVC, animated: false)
+                            self.animateThumbnail(thumbnail: cell.thumbnailView, originFrame: globalFrame, targetFrame: detailVC.mainImageFrame) {
+                                self.navigationController?.pushViewController(detailVC, animated: false)
+                            }
                         }
                     }
                 }
@@ -92,15 +93,31 @@ class PageContentViewController: UIViewController {
             scrollView.addSubview(articleTableView)
         }
         #endif
-        
-        
     }
 }
 
 // MARK: - Internal
 fileprivate extension PageContentViewController {
     
-    
+    func animateThumbnail(thumbnail: UIImageView, originFrame: CGRect, targetFrame: CGRect, completion: @escaping () -> ()) {
+        if let priorThumbnail = self.thumbnailWithAnimate {
+            priorThumbnail.removeFromSuperview()
+        }
+        
+        thumbnail.isHidden = true
+        
+        self.thumbnailWithAnimate = UIImageView(image: thumbnail.image!)
+        self.thumbnailWithAnimate!.frame = originFrame
+        self.view.addSubview(thumbnailWithAnimate!)
+        
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
+            if let thumbnailWithAnimate = self?.thumbnailWithAnimate {
+                thumbnailWithAnimate.frame = targetFrame
+            }
+        }, completion: { (completed) in
+            completion()
+        })
+    }
 }
 
 // MARK - ViewControllerInterface

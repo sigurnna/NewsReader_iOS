@@ -13,20 +13,25 @@ class PageDetailViewController: UIViewController {
     @IBOutlet weak fileprivate var scrollView: UIScrollView!
     @IBOutlet weak fileprivate var mainImageView: UIImageView!
     
+    fileprivate let heightMultiplier: CGFloat = 0.6
+    
     // Set from outside.
     var mainImage: UIImage?
-    var mainImageFrame: CGRect?
     
-    var imageViewWithAnimating: UIImageView?
-
+    var mainImageFrame: CGRect {
+        let screenBounds = UIScreen.main.bounds
+        
+        return CGRect.init(x: screenBounds.origin.x,
+                           y: screenBounds.origin.y,
+                           width: screenBounds.width,
+                           height: screenBounds.height * self.heightMultiplier)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let image = self.mainImage, let imageFrame = self.mainImageFrame {
-            self.imageViewWithAnimating = UIImageView(image: image)
-            self.imageViewWithAnimating!.frame = imageFrame
-            
-            self.scrollView.addSubview(self.imageViewWithAnimating!)
+       
+        if let mainImage = self.mainImage {
+            self.mainImageView.image = mainImage
         }
     }
 }

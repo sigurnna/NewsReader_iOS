@@ -112,8 +112,8 @@
         <!--Page Detail View Controller-->
         <scene sceneID="Mj1-NA-sBZ">
             <objects>
-                <viewController storyboardIdentifier="PageDetailViewController" id="dZc-Tn-Ipi" customClass="PageDetailViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Wcb-gd-lHr">
+                <viewController storyboardIdentifier="PageDetailViewController" modalPresentationStyle="overCurrentContext" id="dZc-Tn-Ipi" customClass="PageDetailViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="Wcb-gd-lHr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -136,6 +136,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="R30-f8-3xZ" firstAttribute="width" secondItem="us9-Nn-prD" secondAttribute="width" id="2Bu-Gk-G2v"/>
                                     <constraint firstAttribute="trailing" secondItem="R30-f8-3xZ" secondAttribute="trailing" id="KyJ-di-RH3"/>
