@@ -124,12 +124,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hRA-ru-qJ7">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="388"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="rZs-mP-6j2"/>
+                                                </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="hRA-ru-qJ7" firstAttribute="height" secondItem="R30-f8-3xZ" secondAttribute="height" multiplier="0.6" id="DVE-yB-VcW"/>
                                             <constraint firstItem="hRA-ru-qJ7" firstAttribute="leading" secondItem="R30-f8-3xZ" secondAttribute="leading" id="Gr8-id-7Mg"/>
                                             <constraint firstItem="hRA-ru-qJ7" firstAttribute="top" secondItem="R30-f8-3xZ" secondAttribute="top" id="QCb-cC-uD2"/>
                                             <constraint firstAttribute="trailing" secondItem="hRA-ru-qJ7" secondAttribute="trailing" id="xXl-Mf-xCr"/>
@@ -157,7 +159,7 @@
                         <viewLayoutGuide key="safeArea" id="L5Y-U7-s61"/>
                     </view>
                     <connections>
-                        <outlet property="mainImageView" destination="hRA-ru-qJ7" id="RVO-Is-DPd"/>
+                        <outlet property="mainImageView" destination="hRA-ru-qJ7" id="AqI-Lq-p3R"/>
                         <outlet property="scrollView" destination="us9-Nn-prD" id="qKB-cU-EZ9"/>
                     </connections>
                 </viewController>

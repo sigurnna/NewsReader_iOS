@@ -9,22 +9,19 @@
 import UIKit
 
 class PageDetailViewController: UIViewController {
+    let mainImageHeight: CGFloat = 300
     
     @IBOutlet weak fileprivate var scrollView: UIScrollView!
     @IBOutlet weak fileprivate var mainImageView: UIImageView!
     
-    fileprivate let heightMultiplier: CGFloat = 0.6
-    
-    // Set from outside.
-    var mainImage: UIImage?
-    
+    var mainImage: UIImage? // set from outside.
     var mainImageFrame: CGRect {
         let screenBounds = UIScreen.main.bounds
         
-        return CGRect.init(x: screenBounds.origin.x,
+        return CGRect(x: screenBounds.origin.x,
                            y: screenBounds.origin.y,
                            width: screenBounds.width,
-                           height: screenBounds.height * self.heightMultiplier)
+                           height: self.mainImageHeight)
     }
     
     override func viewDidLoad() {
