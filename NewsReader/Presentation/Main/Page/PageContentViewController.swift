@@ -25,21 +25,7 @@ class PageContentViewController: UIViewController {
     
     // Required
     var page: Int!
-    var type: PageContentType! {
-        didSet {
-            NotificationCenter.default.post(name: .clearBarItem, object: nil)
-            
-            switch self.type! {
-            case .today:
-                self.useSearchBarItem = true
-            case .star:
-                self.useSearchBarItem = true
-            case .group:
-                self.useSearchBarItem = true
-                self.useAddBarItem = true
-            }
-        }
-    }
+    var type: PageContentType!
     
     // "Search" Navigation Button 사용 여부.
     var useSearchBarItem: Bool = false {
@@ -94,10 +80,33 @@ class PageContentViewController: UIViewController {
         }
         #endif
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.refreshRightBarButtonItems()
+    }
 }
 
 // MARK: - Internal
 fileprivate extension PageContentViewController {
+    
+    /// type에 맞는 Navigation Bar Item을 로딩함.
+    func refreshRightBarButtonItems() {
+        NotificationCenter.default.post(name: .clearBarItem, object: nil)
+        
+        switch self.type! {
+        case .today:
+            self.useSearchBarItem = true
+            self.useAddBarItem = false
+        case .star:
+            self.useSearchBarItem = true
+            self.useAddBarItem = false
+        case .group:
+            self.useSearchBarItem = true
+            self.useAddBarItem = true
+        }
+    }
     
     func animateThumbnail(thumbnail: UIImageView, originFrame: CGRect, targetFrame: CGRect, completion: @escaping () -> ()) {
         thumbnail.isHidden = true
