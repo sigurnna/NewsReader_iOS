@@ -32,6 +32,7 @@ class PageDetailViewController: UIViewController {
        
         if let mainImage = self.mainImage {
             self.mainImageView.image = mainImage
+            self.mainImageView.isHidden = false
         }
     }
 }

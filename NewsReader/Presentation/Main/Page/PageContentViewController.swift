@@ -100,22 +100,27 @@ class PageContentViewController: UIViewController {
 fileprivate extension PageContentViewController {
     
     func animateThumbnail(thumbnail: UIImageView, originFrame: CGRect, targetFrame: CGRect, completion: @escaping () -> ()) {
-        if let priorThumbnail = self.thumbnailWithAnimate {
-            priorThumbnail.removeFromSuperview()
-        }
-        
         thumbnail.isHidden = true
         
-        self.thumbnailWithAnimate = UIImageView(image: thumbnail.image!)
-        self.thumbnailWithAnimate!.frame = originFrame
-        self.view.addSubview(thumbnailWithAnimate!)
+        if let thumbnailWithAnimate = self.thumbnailWithAnimate {
+            thumbnailWithAnimate.image = thumbnail.image
+            thumbnailWithAnimate.frame = originFrame
+            thumbnailWithAnimate.isHidden = false
+        } else {
+            self.thumbnailWithAnimate = UIImageView(image: thumbnail.image!)
+            self.thumbnailWithAnimate!.frame = originFrame
+            self.view.addSubview(thumbnailWithAnimate!)
+        }
         
         UIView.animate(withDuration: 0.2, animations: { [weak self] in
             if let thumbnailWithAnimate = self?.thumbnailWithAnimate {
                 thumbnailWithAnimate.frame = targetFrame
             }
-        }, completion: { (completed) in
+        }, completion: { [weak self] (completed) in
             completion()
+            
+            self?.thumbnailWithAnimate?.isHidden = true
+            thumbnail.isHidden = false
         })
     }
 }
